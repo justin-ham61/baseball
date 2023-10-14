@@ -1,0 +1,53 @@
+Person Class Object
+{
+      id: 657508,
+      fullName: 'Mike Baumann',
+      link: '/api/v1/people/657508',
+      firstName: 'Michael',
+      lastName: 'Baumann',
+      primaryNumber: '53',
+      birthDate: '1995-09-10',
+      currentAge: 28,
+      birthCity: 'Mahtomedi',
+      birthStateProvince: 'MN',
+      birthCountry: 'USA',
+      height: `6' 4"`,
+      weight: 240,
+      active: true,
+      currentTeam: [Object],
+      primaryPosition: [Object], ({"code":"1","name":"Pitcher","type":"Pitcher","abbreviation":"P"})
+      useName: 'Mike',
+      useLastName: 'Baumann',
+      middleName: 'Thomas',
+      boxscoreName: 'Baumann',
+      gender: 'M',
+      isPlayer: true,
+      isVerified: true,
+      draftYear: 2017,
+      mlbDebutDate: '2021-09-07',
+      batSide: [Object],
+      pitchHand: [Object],
+      nameFirstLast: 'Mike Baumann',
+      nameSlug: 'mike-baumann-657508',
+      firstLastName: 'Mike Baumann',
+      lastFirstName: 'Baumann, Mike',
+      lastInitName: 'Baumann, M',
+      initLastName: 'M Baumann',
+      fullFMLName: 'Michael Thomas Baumann',
+      fullLFMName: 'Baumann, Michael Thomas',
+      strikeZoneTop: 3.549,
+      strikeZoneBottom: 1.627
+    }
+
+    
+    <h2>Select Category to Get Started</h2>
+        <div className='category-box'>
+            <div className="category-card team">
+                <div className='background-filter'></div>
+                <h2>Teams</h2>
+            </div>
+            <div className="category-card player">
+                <div className='background-filter'></div>
+                <h2>Players</h2>
+            </div>
+        </div>

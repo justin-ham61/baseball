@@ -1,0 +1,10 @@
+gameType = {
+    P: post season,
+    W: World Series,
+    S: spring training,
+    A: all star,
+    F: wild card,
+    D: division series
+    L: league championship
+    R: Regular Season
+}

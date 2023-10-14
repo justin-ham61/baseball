@@ -1,0 +1,144 @@
+.chart-menu{
+    background-color: white;
+    box-shadow: 0px 0px 4px rgb(45, 45, 45);
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    padding: 5px 10px;
+    .return-section{
+      gap: 10px;
+      height: 50px;
+      width: 100%;
+      align-items: center;
+      justify-content: baseline;
+      .return-button{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        height: 40px;
+        width: 100px;
+        border-radius: .5em;
+        transition: .2s;
+        user-select: none;
+        cursor: pointer;
+        svg{
+          color: rgb(100, 100, 255);
+        }
+        p{
+          margin: 0px;
+          font-size: 1.2em;
+          color: rgb(100, 100, 255);
+        }
+        &:hover{
+          background-color: rgb(234, 234, 234);
+        }
+        &:active{
+          box-shadow: 0px 0px 3px gray inset;
+        }
+      }
+    }
+    .menu-item{
+      .menu-title{
+        height: 50px;
+        border-top: solid;
+        border-color: gray;
+        border-width: 1px;
+        cursor: pointer;
+        transition: .2s;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        &:hover{
+          background-color: rgb(240, 240, 240);
+        }
+        h1{
+          font-weight: 400;
+          font-size: 1.4em;
+          margin: .5em 0px;
+        }
+      }
+      .compare-player{
+        display: flex;
+        flex-direction: column;
+        border-top: solid;
+        border-width: 1px;
+        border-color: gray;
+        .compare-player-single{
+          height: 50px;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          border-bottom: solid;
+          border-width: 1px;
+          border-color: gray;
+          h2{
+            margin: 0px;
+            font-size: 1em;
+            font-weight: 600;
+          }
+          img{
+            height: 30px;
+            width: 30px;
+          }
+          svg{
+            color: rgb(255, 118, 118);
+            cursor: pointer;
+            transition: .2s;
+            &:hover{
+              color: pink;
+              transform: scale(1.05);
+            }
+            &:active{
+              transform: scale(.95);
+            }
+          }
+          .player-card{
+            display: flex;
+            gap: 2px;
+            align-items: center;
+          }
+        }
+        .search-bar-section{
+          height: 60px;
+          position:relative;
+          display: flex;
+          align-items: center;
+        }
+      }
+    }
+    .one-player{
+      display: flex;
+    
+      flex-direction: column;
+      padding: 10px 0px;
+      border-top: solid;
+      border-width: 1px;
+      border-color: gray;
+      h2{
+        font-size: 1.2em;
+      }
+      .player-name{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        h2{
+          font-weight: 600;
+        }
+        h2, p{
+          margin: 0px;
+        }
+        img{
+          width: 50px;
+          height: 50px;
+        }
+      }
+      .player-bio{
+        p{
+          margin: 8px 0px;
+        }
+      }
+    }
+    
+    
+  }
