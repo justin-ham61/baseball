@@ -5,6 +5,7 @@
     flex-direction: column;
     box-sizing: border-box;
     padding: 5px 10px;
+    overflow-y: auto;
     .return-section{
       gap: 10px;
       height: 50px;
@@ -56,6 +57,71 @@
           font-weight: 400;
           font-size: 1.4em;
           margin: .5em 0px;
+        }
+      }
+      .team{
+        display: flex;
+        flex-direction: column;
+        .league-name{
+          color: white;
+          font-weight: 700;
+          height: 3em;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          box-sizing: border-box;
+          padding: 8px;
+          gap: 10px;
+          img{
+            height: 40px;
+          }
+        }
+        .division-name{
+          color: white;
+          font-weight: 600;
+          padding-left: 8px;
+        }
+        .team-name{
+          border-bottom: solid;
+          border-color: #888f99;
+          border-width: 1px;
+          transition: .2s;
+            cursor: pointer;
+            &:hover{
+              background-color: rgb(240, 240, 240);
+            }
+        }
+        .nl{
+          background-color: #003370;
+        }
+        .al{
+          background-color: #cd446b;
+        }
+        .national{
+          background-color: #001f45;
+        }
+        .american{
+          background-color: #d1003a;
+        }
+        ul{
+          list-style: none;
+          padding: 0;
+          margin: 0;
+          box-sizing: border-box;
+          li{
+            font-size: 1em;
+            display: flex;
+            align-items: center;
+            height: 40px;
+            gap: 10px;
+            img{
+              height: 40px;
+              padding: 2px 0px;
+            }
+          }
+        }
+        p{
+          margin: 0;
         }
       }
       .compare-player{

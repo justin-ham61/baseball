@@ -7,6 +7,8 @@ import { motion } from 'framer-motion'
 import { useNavigate } from 'react-router-dom'
 
 import {logoObject} from "../images/teamlogo/index"
+import american from "../images/teamlogo/american.png"
+import national from "../images/teamlogo/national.png"
 
 import SearchBar from '../SearchBar/SearchBar'
 
@@ -169,20 +171,62 @@ const ChartMenu = ({currentCategory, setCurrentCategory, player, setPlayer, hitt
 
           <AnimatePresence>
             {currentCategory === 'team' ?
-                <motion.div className='one-player'
+                <motion.div className='team'
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0}}
                 >
                   <div>
-                    {Object.keys(allTeams).map((league, i) => {
-                      console.log(allTeams[league]);
-                      Object.keys(allTeams[league]).map((division) => {
-                        allTeams[league][division].map(team => {
-                          console.log(team.name)
-                        })
-                      })
-                    })}
+                    <div className='league-name national'><p>National League</p><img src={national} alt={national} /></div>
+                      <ul>
+                      <li className='division-name nl'>NL West</li>
+                      {allTeams[104][203].map(team => {
+                        return(
+                          <li className='team-name'><img src={logoObject[team.id]} alt={team.id} />{team.name}</li>
+                        )
+                      })}
+                      </ul>
+                      <ul>
+                        <li className='division-name nl'>NL Central</li>
+                        {allTeams[104][205].map(team => {
+                        return(
+                          <li className='team-name'><img src={logoObject[team.id]} alt={team.id} />{team.name}</li>
+                        )
+                      })}
+                      </ul>
+                      <ul>
+                        <li className='division-name nl'>NL East</li>
+                        {allTeams[104][204].map(team => {
+                        return(
+                          <li className='team-name'><img src={logoObject[team.id]} alt={team.id} />{team.name}</li>
+                        )
+                      })}
+                      </ul>
+                      <div className='league-name american'><p>American League</p><img src={american} alt={american} /></div>
+                      <ul>
+                      <li className='division-name al'>AL West</li>
+                      {allTeams[103][200].map(team => {
+                        return(
+                          <li className='team-name'><img src={logoObject[team.id]} alt={team.id} />{team.name}</li>
+                        )
+                      })}
+                      </ul>
+                      <ul>
+                        <li className='division-name al'>AL Central</li>
+                        {allTeams[103][202].map(team => {
+                        return(
+                          <li className='team-name'><img src={logoObject[team.id]} alt={team.id} />{team.name}</li>
+                        )
+                      })}
+                      </ul>
+                      <ul>
+                        <li className='division-name al'>AL East</li>
+                        {allTeams[103][201].map(team => {
+                        return(
+                          <li className='team-name'><img src={logoObject[team.id]} alt={team.id} />{team.name}</li>
+                        )
+                      })}
+                      </ul>
                   </div>
                 </motion.div>
             : null}

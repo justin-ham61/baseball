@@ -7,6 +7,7 @@ import ChartHero from '../ChartHero/ChartHero'
 import { Func } from '../../util/script/main'
 import NavBar from '../NavBar/NavBar'
 import { AnimatePresence, motion } from 'framer-motion'
+import LiveGames from '../LiveGames/LiveGames'
 
 const Main = () => {
   //Prop for type toggle
@@ -55,6 +56,7 @@ const Main = () => {
     exit={{ opacity:0 }}
     >
       <div className="top">
+        <LiveGames/>
         <NavBar/>
       </div>
       <div className='search-section'>
