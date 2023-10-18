@@ -57,7 +57,7 @@ const Main = () => {
     >
       <div className="top">
         <LiveGames/>
-        <NavBar/>
+        {/* <NavBar/> */}
       </div>
       <div className='search-section'>
         <div className='background-image'></div>
