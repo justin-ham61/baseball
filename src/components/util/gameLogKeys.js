@@ -70,6 +70,11 @@ export const gameLogKeys = [
         fullName: "On Base %"
     },
     {
+        api: "ops",
+        abbreviation: "OPS",
+        fullName: "OPS"
+    },
+    {
         api: "slg",
         abbreviation: "SLG",
         fullName: "Slugging"

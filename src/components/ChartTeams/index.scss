@@ -1,0 +1,111 @@
+.chart{
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    justify-content: start;
+    overflow-y: scroll;
+    width: 100%;
+    align-items: center;
+    .chart-header{
+        .title{
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            h2{
+                font-weight: 800;
+                color: black;
+            }
+        }
+        img{
+            width: 60px;
+        }
+    }
+    .stat-table-section{
+        width: 100%;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        position: relative;
+        text-align: center;
+        .stat-table{
+            width: 100%;
+            border-collapse: collapse;
+            .live-game{
+                .date{
+                    cursor: pointer;
+                    text-decoration: underline;
+                    &:active{
+                        color: blue;
+                        
+                    }
+                }
+                button{
+                    border-style: none;
+                    background-color: red;
+                    border-radius: 4px;
+                    transition: .2s;
+                    &:hover{
+                        background-color: white;
+                        border-style: solid;
+                        border-width: 1px;
+                        border-color: red;
+                    }
+                    svg{
+                        color: white;
+                        padding: 4px 10px;
+                        transition: .2s;
+                        &:hover{
+                            color: red;
+                            transform: scale(1.1);
+                        }
+                    }
+                }
+            }
+            .year{
+                background-color: rgb(241, 241, 241);
+            }
+            .win{
+                color: green;
+                font-weight: 600;
+            }
+            .lose{
+                color: red;
+                font-weight: 600;
+            }
+            th{
+                background-color: #081c44;
+                color: white;
+                font-weight: 300;
+                font-size: .8em;
+                padding: 5px;
+                text-decoration: underline;
+                cursor: pointer;
+                p{
+                    margin: 0;
+                }
+            }
+            td{
+                text-align: center;
+                font-size: .8em;
+                button{
+                    cursor: pointer;
+                }
+            }
+            tr{
+                height: 36px;
+                border-bottom: solid;
+                border-width: 1px;
+                border-color: lightgray;
+                transition: .2s;
+                &:hover{
+                    background-color: rgb(241, 241, 241);
+                }
+            }
+        }
+        h2{
+            margin: 0px;
+            margin-bottom: 1em;
+        }
+    }
+}

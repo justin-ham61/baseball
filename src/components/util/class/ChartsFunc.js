@@ -4,7 +4,12 @@ const color = {
     2: "orange",
     3: "green",
     4: "pink",
-    5: "gray"
+    5: "gray",
+    6: "lime",
+    7: "yellow",
+    8: "cyan",
+    9: "purple",
+    10: "lavender"
 }
 
 
@@ -90,7 +95,7 @@ export const ChartsFunc = {
                 backgroundColor: "white",
                 borderColor: color[i],
                 borderWidth: 2,
-                pointRadius: 2,
+                pointRadius: 0,
             }
             returnData.push(newDataSet);
         }

@@ -7,6 +7,7 @@ import { Func } from '../../util/script/main'
 import ChartMenu from '../ChartMenu/ChartMenu'
 import ChartLoading from '../ChartLoading/ChartLoading'
 import ChartCompare from '../ChartCompare/ChartCompare'
+import ChartTeams from '../ChartTeams/ChartTeams'
 import { AnimatePresence, motion } from 'framer-motion'
 
 const ChartHero = () => {
@@ -19,6 +20,7 @@ const ChartHero = () => {
   const [hitterArray, setHitterArray] = useState([])
   const [pitcherArray, setPitcherArray] = useState([])
   const [allTeams, setAllTeams] = useState(null)
+  const [selectedTeam, setSelectedTeam] = useState(null)
   
   //Retrieves data on load
   useEffect(() => {
@@ -97,7 +99,7 @@ const ChartHero = () => {
       }}
       exit={{ opacity:0 }}
     >
-      <ChartMenu currentCategory={currentCategory} setCurrentCategory={setCurrentCategory} player={player} setPlayer={setPlayer} hitterArray={hitterArray} pitcherArray={pitcherArray} allTeams={allTeams}/>
+      <ChartMenu currentCategory={currentCategory} setCurrentCategory={setCurrentCategory} player={player} setPlayer={setPlayer} hitterArray={hitterArray} pitcherArray={pitcherArray} allTeams={allTeams} setSelectedTeam={setSelectedTeam}/>
       <motion.div className='chart-area'
         initial={{ x: 2000 }}
         animate={{ x: 0}}
@@ -109,6 +111,8 @@ const ChartHero = () => {
       >
         {currentCategory === 'single' ? <ChartSingle player={player} setPlayer={setPlayer} setLoading={setLoading} loading={loading}/> : null}
         {currentCategory === 'compare' ? <ChartCompare player={player} setPlayer={setPlayer} setLoading={setLoading} loading={loading}/> : null}
+        {currentCategory === 'team' && selectedTeam ? <ChartTeams player={player} setPlayer={setPlayer} setLoading={setLoading} loading={loading} selectedTeam={selectedTeam}/> : null}
+        
       </motion.div>
     </motion.div>
     </AnimatePresence>

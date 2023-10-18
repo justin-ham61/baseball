@@ -13,6 +13,8 @@ import { gameLogKeys } from '../util/gameLogKeys';
 import CareerStatSelector from '../CareerStatSelector/CareerStatSelector';
 import { AnimatePresence } from 'framer-motion';
 import InfoMessage from '../InfoMessage/InfoMessage';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faPlay } from '@fortawesome/free-solid-svg-icons';
 
 
 const ChartSingle = ({player, setPlayer, setLoading, loading}) => {
@@ -249,6 +251,25 @@ console.log(message)
         setDescriptionData(data);
         
         (showDescription ? toggleShowDescription(false) : toggleShowDescription(true))
+    }
+
+    const handleDateClick = (game) => {
+        console.log(game.team.teamName.toLowerCase())
+        const date = game.date.split("-");
+        const teams = []
+        if (!game.isHome){
+            teams[0] = game.team.teamName.toLowerCase()
+            teams[1] = game.opponent.teamName.toLowerCase()
+        } else {
+            teams[0] = game.opponent.teamName.toLowerCase()
+            teams[1] = game.team.teamName.toLowerCase()
+        }
+
+        const link = `https://www.mlb.com/gameday/${teams[0]}-vs-${teams[1]}/${date[0]}/${date[1]}/${date[2]}/${game.game.gamePk}/`
+        //year/month/day/gameId
+        window.open(link, "_blank");
+        console.log(game);
+        //need gameid, date(year/month/day)
     }
  
     //Data for graph solo
@@ -493,14 +514,15 @@ console.log(message)
                             <th key={i}>{item.abbreviation}</th>
                         )
                     })}
+                    <th>Highlights</th>
                 </tr>
                 {gameLogs.map((game, i)  => {
                     const date = game.date.split("-")
                     const betterDate = monthKey[date[1]] + " " + date[2];
                     console.log(date)
                     return(
-                        <tr key={i} onClick={() => getStory(game.game.gamePk)} className="live-game">
-                            <td>{betterDate}</td>
+                        <tr key={i} className="live-game">
+                            <td><p className='date' onClick={() => handleDateClick(game)}>{betterDate}</p></td>
                             <td className={game.isWin ? "win" : "lose"}>{game.team.abbreviation}</td>
                             <td className={!game.isWin ? "win" : "lose"}>{game.opponent.abbreviation}</td>
                             {gameLogKeys.map((item, i) => {
@@ -508,6 +530,7 @@ console.log(message)
                                     <td key={i}>{game.stat[item.api]}</td>
                                 )
                             })}
+                            <td><button onClick={() => getStory(game.game.gamePk)}><FontAwesomeIcon icon={faPlay}/></button></td>
                         </tr>
                     )
                 })}

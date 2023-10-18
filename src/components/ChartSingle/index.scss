@@ -104,8 +104,35 @@
         width: 100%;
         border-collapse: collapse;
         .live-game{
-          cursor: pointer;
-
+          .date{
+            cursor: pointer;
+            text-decoration: underline;
+            &:active{
+              color: blue;
+              
+            }
+          }
+          button{
+            border-style: none;
+            background-color: red;
+            border-radius: 4px;
+            transition: .2s;
+            &:hover{
+              background-color: white;
+              border-style: solid;
+              border-width: 1px;
+              border-color: red;
+            }
+            svg{
+              color: white;
+              padding: 4px 10px;
+              transition: .2s;
+              &:hover{
+                color: red;
+                transform: scale(1.1);
+              }
+            }
+          }
         }
         .year{
           background-color: rgb(241, 241, 241);
@@ -133,6 +160,9 @@
         td{
           text-align: center;
           font-size: .8em;
+          button{
+            cursor: pointer;
+          }
         }
         tr{
           height: 36px;

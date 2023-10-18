@@ -39,7 +39,6 @@ const ChartCompare = ({player, setPlayer, setLoading, loading}) => {
         await Promise.all(player.map(person => {
           try{
             return new Promise((resolve, reject) => {
-
               axios.get(`https://statsapi.mlb.com/api/v1/people/${person.id}/stats?stats=gameLog,statSplits,statsSingleSeason&leagueListId=mlb_hist&group=hitting&gameType=R&sitCodes=1,2,3,4,5,6,7,8,9,10,11,12&hydrate=team&season=2023`)
               .then(response => {
                 console.log(response.data.stats[0].splits)

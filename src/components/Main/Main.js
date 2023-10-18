@@ -65,7 +65,7 @@ const Main = () => {
         </div>
         <div className='search-bar-box'>
           <h1>BASEBALL STATS</h1>
-          <TypeToggle active={active} setActive={setActive}/>
+          {/* <TypeToggle active={active} setActive={setActive}/> */}
           <SearchBar playersArray={active === 'hitter' ? hitterArray : pitcherArray} active={active} currentCategory="main"/>
         </div>
       </div>

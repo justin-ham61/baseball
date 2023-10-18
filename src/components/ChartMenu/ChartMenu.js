@@ -13,7 +13,7 @@ import national from "../images/teamlogo/national.png"
 import SearchBar from '../SearchBar/SearchBar'
 
 //Need to import player
-const ChartMenu = ({currentCategory, setCurrentCategory, player, setPlayer, hitterArray, pitcherArray, allTeams}) => {
+const ChartMenu = ({currentCategory, setCurrentCategory, player, setPlayer, hitterArray, pitcherArray, allTeams, setSelectedTeam}) => {
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -121,7 +121,6 @@ const ChartMenu = ({currentCategory, setCurrentCategory, player, setPlayer, hitt
                   exit={{ opacity: 0}}
                 >
                   {player.map((item, i) => { 
-                    console.log(item)
                     return(
                       <div key={i} className='compare-player-single'>
                         <div className='player-card'>
@@ -182,7 +181,7 @@ const ChartMenu = ({currentCategory, setCurrentCategory, player, setPlayer, hitt
                       <li className='division-name nl'>NL West</li>
                       {allTeams[104][203].map(team => {
                         return(
-                          <li className='team-name'><img src={logoObject[team.id]} alt={team.id} />{team.name}</li>
+                          <li className='team-name' onClick={() => setSelectedTeam(team)}><img src={logoObject[team.id]} alt={team.id} />{team.name}</li>
                         )
                       })}
                       </ul>
@@ -190,7 +189,7 @@ const ChartMenu = ({currentCategory, setCurrentCategory, player, setPlayer, hitt
                         <li className='division-name nl'>NL Central</li>
                         {allTeams[104][205].map(team => {
                         return(
-                          <li className='team-name'><img src={logoObject[team.id]} alt={team.id} />{team.name}</li>
+                          <li className='team-name' onClick={() => setSelectedTeam(team)}><img src={logoObject[team.id]} alt={team.id} />{team.name}</li>
                         )
                       })}
                       </ul>
@@ -198,7 +197,7 @@ const ChartMenu = ({currentCategory, setCurrentCategory, player, setPlayer, hitt
                         <li className='division-name nl'>NL East</li>
                         {allTeams[104][204].map(team => {
                         return(
-                          <li className='team-name'><img src={logoObject[team.id]} alt={team.id} />{team.name}</li>
+                          <li className='team-name' onClick={() => setSelectedTeam(team)}><img src={logoObject[team.id]} alt={team.id} />{team.name}</li>
                         )
                       })}
                       </ul>
@@ -207,7 +206,7 @@ const ChartMenu = ({currentCategory, setCurrentCategory, player, setPlayer, hitt
                       <li className='division-name al'>AL West</li>
                       {allTeams[103][200].map(team => {
                         return(
-                          <li className='team-name'><img src={logoObject[team.id]} alt={team.id} />{team.name}</li>
+                          <li className='team-name' onClick={() => setSelectedTeam(team)}><img src={logoObject[team.id]} alt={team.id} />{team.name}</li>
                         )
                       })}
                       </ul>
@@ -215,7 +214,7 @@ const ChartMenu = ({currentCategory, setCurrentCategory, player, setPlayer, hitt
                         <li className='division-name al'>AL Central</li>
                         {allTeams[103][202].map(team => {
                         return(
-                          <li className='team-name'><img src={logoObject[team.id]} alt={team.id} />{team.name}</li>
+                          <li className='team-name' onClick={() => setSelectedTeam(team)}><img src={logoObject[team.id]} alt={team.id} />{team.name}</li>
                         )
                       })}
                       </ul>
@@ -223,7 +222,7 @@ const ChartMenu = ({currentCategory, setCurrentCategory, player, setPlayer, hitt
                         <li className='division-name al'>AL East</li>
                         {allTeams[103][201].map(team => {
                         return(
-                          <li className='team-name'><img src={logoObject[team.id]} alt={team.id} />{team.name}</li>
+                          <li className='team-name' onClick={() => setSelectedTeam(team)}><img src={logoObject[team.id]} alt={team.id} />{team.name}</li>
                         )
                       })}
                       </ul>
